@@ -128,6 +128,9 @@ PriorityQueue.minHeapify = function minHeapify (array, index, heapSize) {
 // value: *required* the value to set the key to
 PriorityQueue.prototype.decreaseKey = function decreaseKey (index, value) {
     var self = this;
+    if (self.kind == 'max') {
+        throw new Error('decreaseKey() is not defined for max-priority queue');
+    }
     PriorityQueue.heapDecreaseKey(self.array, index, value);
     return self;
 };
@@ -164,6 +167,9 @@ PriorityQueue.prototype.extractMin = function extractMin () {
 // value: *required* the value to set the key to
 PriorityQueue.prototype.increaseKey = function increaseKey (index, value) {
     var self = this;
+    if (self.kind == 'min') {
+        throw new Error('increaseKey() is not defined for min-priority queue');
+    }
     PriorityQueue.heapIncreaseKey(self.array, index, value);
     return self;
 };
