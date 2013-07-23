@@ -1,6 +1,6 @@
 {
   "name": "priority-heap-queue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Priority queue implemented using a heap",
   "scripts": {
     "test": "node scripts/test.js"
